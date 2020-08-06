@@ -247,13 +247,13 @@ gameScene.gameOver = function () {
     // block UI
     this.uiBlocked = true;
 
+    // change pet frame
+    this.pet.setFrame(4);
+
     // darken bg 
     const rect = this.add.graphics().fillStyle(0x000000, 1).fillRect(0, 0, this.sys.game.config.width, this.sys.game.config.height)
     rect.depth = -1;
     this.bg.alpha = 0.4;
-
-    // change pet frame
-    this.pet.setFrame(4);
 
     let deathText = this.add.text(40, this.sys.game.config.height - 40, '', {
         font: '18px Quicksand',
